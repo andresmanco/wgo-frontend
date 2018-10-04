@@ -144,11 +144,11 @@ class App extends Component {
                   <Route path='/' render={props=><NavBar {...props} handleButtonClick={this.handleButtonClick} />}/>
                   <Route exact path='/' render={props=> <MapContainer {...props} />} />
                   <Route exact path='/' render={props=> <Filter {...props} />} />
+                  <Route exact path="/profile" render={props=> <Profile {...props}/>} />
                   {this.props.user ?
                     <Fragment>
                       <Route exact path="/create-event" render={props=> <CreateEvent {...props}/>} />
                       <Route exact path="/edit-event" render={props=> <EditEvent {...props}/>} />
-                      <Route exact path="/profile" render={props=> <Profile {...props}/>} />
                     </Fragment>
                     :
                     <Fragment>

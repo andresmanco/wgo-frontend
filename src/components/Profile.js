@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import { Segment, Grid, Image, Button, Card } from 'semantic-ui-react'
+import { Segment, Grid, Image, Card } from 'semantic-ui-react'
 import {selectEvent, selectUser} from '../redux/actions'
 import EventDetail from './EventDetail'
 import {connect} from 'react-redux'
