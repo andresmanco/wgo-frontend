@@ -11,7 +11,7 @@ import Profile from './Profile'
 import { Menu, Segment, Sidebar, Icon } from 'semantic-ui-react'
 import {BrowserRouter, Route, NavLink} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {getCurrentEvents, checkUserLoged, getActiveUsers, getAllUsers, logoutUser, selectUser} from '../redux/actions'
+import {baseUrl, getCurrentEvents, checkUserLoged, getActiveUsers, getAllUsers, logoutUser, selectUser} from '../redux/actions'
 
 class App extends Component {
   state = { visible: false }
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   updateUserOffline= ()=>{
-    return (fetch('http://localhost:3001/user-update', {
+    return (fetch(baseUrl + '/user-update', {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -50,7 +50,7 @@ class App extends Component {
     if(this.props.user !== null){
       navigator.geolocation.getCurrentPosition(p=>{
 
-        fetch('http://localhost:3001/user-update', {
+        fetch(baseUrl + '/user-update', {
           method: 'PATCH',
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -140,7 +140,7 @@ class App extends Component {
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic style={{minHeight: '100vh'}}>
                 <Fragment>
-                  
+
                   <Route path='/' render={props=><NavBar {...props} handleButtonClick={this.handleButtonClick} />}/>
                   <Route exact path='/' render={props=> <MapContainer {...props} />} />
                   <Route exact path='/' render={props=> <Filter {...props} />} />

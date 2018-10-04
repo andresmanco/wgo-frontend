@@ -5,7 +5,8 @@ import {
   ADD_LIKE, DELETE_LIKE
  } from './types'
 
-const baseUrl = "http://localhost:3001"
+export const baseUrl = "https://what-is-going-on-backend.herokuapp.com"
+
 
 //LOGIN THE USER IN THE LOGIN FORM AND ALSO AFTER CREATE THE ACC
 export function loginUser(user){
