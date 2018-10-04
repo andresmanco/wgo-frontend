@@ -67,7 +67,14 @@ class EventDetail extends Component{
       centered={false}>
         <Modal.Header>
           <Grid>
-            <Grid.Column width={7}>
+            <Grid.Row>
+              <Grid.Column style={{textAlign: 'right'}}>
+                <Button onClick={this.handleClose} style={{textAlign: 'center'}}>
+                  <Icon name='window close'/>
+                </Button>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Column width={6}>
               <NavLink onClick={this.handleClickUser} activeClassName="ui active item" className="ui item" exact to="/profile">
                 <h2>
                   <Icon name='user'/>
@@ -75,7 +82,7 @@ class EventDetail extends Component{
                 </h2>
               </NavLink>
             </Grid.Column>
-            <Grid.Column width={8}>
+            <Grid.Column width={9}>
               <h1>
                 {currentEvent.title}
               </h1>
