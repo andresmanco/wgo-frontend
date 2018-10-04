@@ -140,6 +140,7 @@ class App extends Component {
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic style={{minHeight: '100vh'}}>
                 <Fragment>
+                  
                   <Route path='/' render={props=><NavBar {...props} handleButtonClick={this.handleButtonClick} />}/>
                   <Route exact path='/' render={props=> <MapContainer {...props} />} />
                   <Route exact path='/' render={props=> <Filter {...props} />} />
