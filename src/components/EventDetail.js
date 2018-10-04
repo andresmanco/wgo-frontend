@@ -13,7 +13,6 @@ class EventDetail extends Component{
 
   componentDidMount=()=>{
     if(this.props.currentUser){
-
       if(this.props.likes.find(like=> like.guest_id === this.props.currentUser.id)){
         this.setState({likeButton: true})
       }

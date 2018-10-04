@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Button, Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { loginUser } from '../redux/actions'
+import { loginUser, baseUrl } from '../redux/actions'
 
 class CreateAcc extends Component {
   state={
@@ -13,7 +13,7 @@ class CreateAcc extends Component {
   }
 
   createNewAcc = ()=>{
-    return fetch("http://localhost:3001/users", {
+    return fetch(baseUrl + "/users", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ class CreateAcc extends Component {
           <Form.Field>
             <input value={this.state.password} onChange={this.handleChange} name='password' placeholder='Password' />
           </Form.Field>
-          
+
           <Button type='submit'>Submit</Button>
         </Form>
       </div>
